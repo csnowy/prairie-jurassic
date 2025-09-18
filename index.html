@@ -1,159 +1,463 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prairie Jurassic — Laser Tag & Arcade in Saskatoon</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="icon.svg">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prairie Jurassic — Extreme Family Fun Center</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Prairie Jurassic home">
-        <img class="logo" src="icon.svg" alt="Prairie Jurassic logo"/>
-        <h1>Prairie Jurassic</h1>
-      </a>
-      <nav aria-label="Primary">
-        <a href="#attractions">Attractions</a>
-        <a href="#facility">Facility</a>
-        <a href="#arcade">Arcade</a>
-        <a href="#birthdays">Birthdays</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-    </div>
-    <div id="mobileMenu" class="mobile-menu hidden" role="dialog" aria-modal="true">
-      <a href="#attractions">Attractions</a>
-      <a href="#facility">Facility</a>
-      <a href="#arcade">Arcade</a>
-      <a href="#birthdays">Birthdays</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container wrap">
-      <div class="hero-copy">
-        <span class="badge">Saskatoon’s Prehistoric Fun Zone</span>
-        <h2 class="title">Laser Tag, Arcade & Glow Party Rooms</h2>
-        <p class="lead">Two-level glow arena • Ages 6+ • Indoor runners required</p>
-        <div class="cta">
-          <a class="btn primary" href="#birthdays">Book a Birthday →</a>
-          <a class="btn secondary" href="#attractions">See Attractions</a>
+<body class="min-h-screen text-white" style="background: linear-gradient(#0c3319,#08110e,#3a1449)">
+
+    <!-- Sticky Announcement + Nav -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
+        <div class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between text-sm">
+            <div class="flex items-center gap-1 text-white/80">
+            </div>
+        </div>
+        <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center gap-4">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Prairie Jurassic logo" class="h-11 w-11 rounded-md p-1">
+            <div class="font-bold tracking-wide fs-lg">Prairie Jurassic</div>
+        </div>
+        <div class="ml-auto hidden md:flex items-center gap-1">
+            <a href="#attractions" class="px-3 py-2 rounded hover:bg-white/10">Attractions</a>
+            <a href="#parties" class="px-3 py-2 rounded hover:bg-white/10">Parties</a>
+            <a href="#gallery" class="px-3 py-2 rounded hover:bg-white/10">Gallery</a>
+            <a href="#test" class="px-3 py-2 rounded hover:bg-white/10">FAQ</a>
+            <a href="#contact" class="px-3 py-2 rounded hover:bg-white/10">Contact</a>
+            <a href="#faq" class="px-3 py-2 rounded hover:bg-white/10">Hours</a>
+        </div>
+        <div class="ml-2 hidden sm:flex items-center gap-2">
+            <button class="btn-primary" data-booking>
+            Book Now
+            </button>
+            <a href="#specials" class="btn-outline">Specials</a>
+            </a>
+        </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0">
+        <div class="absolute inset-0" style="background:radial-gradient(circle at 20% 20%, rgba(168,85,247,.25),transparent 40%),radial-gradient(circle at 80% 30%, rgba(34,197,94,.25),transparent 35%),radial-gradient(circle at 50% 80%, rgba(59,130,246,.25),transparent 40%)"></div>
+        <div class="absolute inset-0 laser-grid mask-fade opacity-50"></div>
+        </div>
+        <div class="relative mx-auto max-w-7xl px-4 py-24 grid md:grid-cols-2 gap-8 items-center">
+            <div class="max-w-3xl">
+                <span class="badge bg-fuchsia-500/20 border border-fuchsia-400/30 text-fuchsia-200 fs-md">Extreme Family Fun Center</span>
+                <h1 class="mt-4 text-4xl sm:text-6xl font-black leading-tight">
+                <span class="glow-text">Saskatoon's ONLY Laser Tag Center</span>
+                </h1>
+                <p class="mt-4 text-lg text-white/80">Conquer the arena and celebrate in dino‑sized party rooms!</p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                <a class="inline-flex items-center gap-2 bg-lime-500 hover:bg-lime-400 text-black font-bold px-5 py-3 rounded" data-booking>
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 7h-5l-2-3-2 3H6l2 4-2 4h5l2 3 2-3h5l-2-4 2-4z"/></svg>
+                    Book With Us Today!
+                </a>
+                <a href="#specials" class="inline-flex items-center gap-2 border border-white/20 text-white hover:bg-white/10 px-5 py-3 rounded">See Specials</a>
+                <a href="#attractions" class="inline-flex items-center gap-2 text-white/80 hover:text-white px-5 py-3">Explore Attractions →</a>
+                </div>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2"><span class="icon-green">📍</span><span class="text-white/85">618 Cynthia St</span></div>
+                <div class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2"><span class="icon-green">🕒</span><span class="text-white/85">Walk‑ins Welcome</span></div>
+                <div class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2"><span class="icon-green">🛡️</span><span class="text-white/85">Family‑Friendly</span></div>
+                </div>
+            </div>
+            <!-- Right: Placeholder Image -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+            <img src="logo.png" alt="Prairie Jurassic arena placeholder" class="w-full h-full object-cover">
+            </div>
+    </div>
+
+    <!-- ATTRACTIONS -->
+    <section id="attractions" class="mx-auto max-w-7xl px-4 py-16">
+        <div class="flex items-end justify-between gap-4">
+        <div>
+            <h2 class="fs-4xl font-black">Attractions</h2>
+            <p class="text-white/70 mt-2">Action for every age — fuel up the fun.</p>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+            <div class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+                <div class="relative h-52">
+                    <img src="arena.jpg" alt="Laser Tag Arena" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30"></div> <!-- overlay for readability -->
+                </div>
+                <!-- Bottom content -->
+                <div class="p-5 bg-black/40 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                    <h3 class="font-bold fs-xl">Laser Tag Arena</h3>
+                    <span class="badge fs-md">6+</span>
+                    </div>
+                    <p class="text-white/80 mt-2">High-energy play with glowing dino decor and pumping music.</p>
+                </div>
+            </div>
+        <!-- Card 2 -->
+            <div class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+            <div class="relative h-52">
+                <img src="arcade.jpg" alt="Arcade" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/30"></div> <!-- overlay for readability -->
+            </div>
+            <!-- Bottom content -->
+            <div class="p-5 bg-black/40 backdrop-blur-sm">
+                <div class="flex items-center justify-between">
+                <h3 class="font-bold fs-xl">Jurassic Arcade</h3>
+                <span class="badge fs-md">All Ages</span>
+                </div>
+                <p class="text-white/80 mt-2">Arcade games galor, with the classics; and more modern machines.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTIES -->
+    <section id="parties" class="mx-auto max-w-7xl px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+                <img src="party.jpg" alt="Party" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h2 class="fs-4xl font-black">Birthday & Group Parties</h2>
+                <p class="text-white/75 mt-3">Invite the crew, and let us handle the fun!</p>
+                <ul class="mt-4 space-y-2 text-white/80 list-disc list-inside">
+                <li>Two laser tag games per guest</li>
+                <li>Party room (45 min)</li>
+                <li>Free tokens for birthday guest</li>
+                </ul>
+                <div class="mt-6 flex gap-3">
+                <button class="bg-lime-500 hover:bg-lime-400 text-black font-bold fs-xl px-24 py-2 rounded inline-flex items-center gap-2" data-booking>Book Now!</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- SPECIALS -->
+    <section id="specials" class="mx-auto max-w-7xl px-4 py-16">
+        <div class="flex items-end justify-between">
+        <h2 class="fs-4xl font-black">Walk‑In Specials</h2>
+        </div>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+            <div class="relative rounded-2xl overflow-hidden p-[4px] 
+                bg-lime-400 transition duration-300 
+                hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500">
+    
+                <!-- Inner card (actual content) -->
+                <div class="rounded-2xl overflow-hidden relative h-56 bg-black">
+                    <!-- Full background image -->
+                    <img src="Trex.jpg" alt="T-Rex Tuesdays"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30"></div>
+
+                    <!-- Content at bottom -->
+                    <div class="absolute bottom-0 w-full p-5 bg-black/70 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold fs-2xl">T-Rex Tuesdays</h3>
+                        <span class="badge fs-lg" data-day="2">Today</span>
+                    </div>
+                    <p class="text-white/80 mt-1">Every laser tag game is only $8.95!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden p-[4px] 
+                bg-lime-400 transition duration-300 
+                hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500">
+    
+                <!-- Inner card (actual content) -->
+                <div class="rounded-2xl overflow-hidden relative h-56 bg-black">
+                    <!-- Full background image -->
+                    <img src="wild.jpg" alt="T-Rex Tuesdays"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30"></div>
+
+                    <!-- Content at bottom -->
+                    <div class="absolute bottom-0 w-full p-5 bg-black/70 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold fs-2xl">Wild Wednesdays</h3>
+                        <span class="badge fs-lg" data-day="3">Today</span>
+                    </div>
+                    <p class="text-white/80 mt-1">Buy one game of laser tag for just 11 Dollars!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden p-[4px] 
+                bg-lime-400 transition duration-300 
+                hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500">
+    
+                <!-- Inner card (actual content) -->
+                <div class="rounded-2xl overflow-hidden relative h-56 bg-black">
+                    <!-- Full background image -->
+                    <img src="triceratops.webp" alt="T-Rex Tuesdays"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30"></div>
+
+                    <!-- Content at bottom -->
+                    <div class="absolute bottom-0 w-full p-5 bg-black/70 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold fs-2xl">Tricera Thursdays</h3>
+                        <span class="badge fs-lg" data-day="4">Today</span>
+                    </div>
+                    <p class="text-white/80 mt-1">Get a game of laser tag and 5 arcade tokens for just 22 Dollars!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden p-[4px] 
+                bg-lime-400 transition duration-300 
+                hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500">
+    
+                <!-- Inner card (actual content) -->
+                <div class="rounded-2xl overflow-hidden relative h-56 bg-black">
+                    <!-- Full background image -->
+                    <img src="students.jpg" alt="T-Rex Tuesdays"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30"></div>
+
+                    <!-- Content at bottom -->
+                    <div class="absolute bottom-0 w-full p-5 bg-black/70 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold fs-2xl">Student Special</h3>
+                        <span class="badge fs-lg" data-day="2-5">Today</span>
+                    </div>
+                    <p class="text-white/80 mt-1">Get 2 laser tag games for just 18.95$ (Mon-Fri, with valid ID) </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="mx-auto max-w-7xl px-4 py-16">
+  <h2 class="text-3xl sm:text-4xl font-black">Gallery</h2>
+  <p class="text-white/70 mt-2">A peek inside the arena.</p>
+
+  <div class="relative mt-6">
+    <!-- Slides wrapper -->
+    <div id="galleryTrack" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4">
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery1.jpg" alt="Arena action" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery2.jpg" alt="Arcade" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery3.jpg" alt="Party room" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery4.jpg" alt="Arena action" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery5.jpg" alt="Arcade" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery6.jpg" alt="Party room" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery7.jpg" alt="Arena action" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery8.jpg" alt="Arcade" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery9.jpg" alt="Party room" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-shrink-0 w-80 snap-center rounded-xl overflow-hidden border border-white/10">
+        <img src="gallery/gallery10.jpg" alt="Party room" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Nav buttons -->
+    <button id="prevGallery" class="absolute top-1/2 -left-6 -translate-y-1/2 bg-black/50 p-3 rounded-full">‹</button>
+    <button id="nextGallery" class="absolute top-1/2 -right-6 -translate-y-1/2 bg-black/50 p-3 rounded-full">›</button>
+  </div>
+</section>
+
+    <!-- TESTIMONIALS -->
+    <section id="test" class="mx-auto max-w-7xl px-4 py-16">
+        <div class="flex items-end justify-between">
+        <h2 class="text-3xl sm:text-4xl font-black">What Guests Say</h2>
+        <div class="flex items-center gap-2 text-amber-300"><span>⭐</span><span class="text-white/90">4.7/5 average</span></div>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6"><p class="text-white/85">“Best kids party we’ve had — staff handled everything and the arena is epic!”</p><p class="mt-3 text-sm text-white/60">— Ashley</p></div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6"><p class="text-white/85">“The maze is addictive. We stayed longer than planned just to beat our times.”</p><p class="mt-3 text-sm text-white/60">— Marcus</p></div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6"><p class="text-white/85">“Clean, safe, and so much fun. The prize wall sealed the deal for our crew.”</p><p class="mt-3 text-sm text-white/60">— Priya</p></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mx-auto max-w-7xl px-4 py-16">
+    <h2 class="text-3xl sm:text-4xl font-black">FAQ</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Do I need to book in advance?</div>
+        <p class="text-white/75 mt-2">Laser tag walk-ins are welcome, but parties must book ahead to secure rooms and times.</p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Is there an age limit?</div>
+        <p class="text-white/75 mt-2">We set the minimum age at 6 years old, however any child under 10 must be accompanied by an adult.</p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Do I need a waiver?</div>
+        <p class="text-white/75 mt-2">Nope - no waiver required! However we do have a height requirement of 46 inches (117cm).</p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Where are you located?</div>
+        <p class="text-white/75 mt-2">618 Cynthia St, Saskatoon, right behind the Sandman hotel. We have plenty of parking on site!</p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Do we need to wear special footwear in your facility?</div>
+        <p class="text-white/75 mt-2">
+            All wet or dirty outdoor footwear must be removed at entrance. Guests must wear runners or grip socks to enter our laser tag arenas. 
+            No wet or dirty footwear is allowed throughout our facility. Grip socks are not available for purchase.
+        </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">What type of food can we bring into the party room?</div>
+        <p class="text-white/75 mt-2">
+            1. Pizza can be brought in upon request. Our facility has a warming oven to store your pizza while you play.<br>
+            2. Dessert items can be cake or cupcakes (no ice cream — fridge only).<br>
+            3. Drinks can be juice boxes or water bottles.<br>
+            4. Fruit and veggie trays are also allowed.<br>
+            <strong>No chips, popcorn, crackers, ice cream, or similar snacks. No cups with 2L juice or pop.</strong>
+        </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Do we need to pay in full or 50% deposit?</div>
+        <p class="text-white/75 mt-2">
+            Group bookings with a laser tag option must be paid in full at time of booking. Birthday parties require a 50% deposit via e-transfer at booking.
+        </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">When do I need to book a birthday party by?</div>
+        <p class="text-white/75 mt-2">
+            We recommend booking 2–3 weeks in advance. We accept bookings up to 2 months in advance.
+        </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="font-semibold">Can we use coupons with a birthday booking?</div>
+        <p class="text-white/75 mt-2">
+            Coupons can only be used with group bookings or on a walk-in basis.
+        </p>
+        </div>
+
+    </div>
+    </section>
+
+
+    <!-- HOURS -->
+    <section id="hours" class="mx-auto max-w-7xl px-4 py-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-black">Hours of Operation</h2>
+        <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-white/85">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">Tues–Fri<br><span class="font-semibold">5:00 — 8:30</span></div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">Saturday<br><span class="font-semibold">12:30 — 9:00</span></div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">Sunday<br><span class="font-semibold">1:30 — 6:00</span></div>
+        </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social" class="mx-auto max-w-7xl px-4 py-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-black">Follow Us</h2>
+        <div class="mt-6 flex justify-center gap-6 text-3xl">
+            <a href="https://www.facebook.com/prairiejurassic/" 
+                target="_blank" rel="noopener noreferrer" 
+                class="hover:text-lime-400 cursor-pointer z-10">📘</a>
+
+                <a href="https://www.instagram.com/prairiejurassic/" 
+                target="_blank" rel="noopener noreferrer" 
+                class="hover:text-pink-400 cursor-pointer z-10">📸</a>
+        </div>
+    </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-black">Contact & Hours</h2>
+        <p class="text-white/75 mt-2">Have questions about parties or group rates? Drop us a line.</p>
+        <div class="mt-6 space-y-3 text-white/85">
+          <p class="flex items-center gap-2"><span class="icon-green">📍</span>618 Cynthia St, Saskatoon</p>
+          <p class="flex items-center gap-2"><span class="icon-green">📞</span>(306) 952-2817</p>
+          <p class="flex items-center gap-2"><span class="icon-green">✉️</span>prairiejurassic17@shaw.ca</p>
         </div>
       </div>
-      <div class="hero-art">
-        <img src="hero-placeholder.jpg" alt="Laser Tag Arena Preview" />
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <h3 class="text-xl font-semibold">Send a Message</h3>
+        <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
+          <input class="bg-white/10 border border-white/20 rounded px-3 py-2 placeholder-white/60" placeholder="Name" required>
+          <input class="bg-white/10 border border-white/20 rounded px-3 py-2 placeholder-white/60" placeholder="Email" type="email" required>
+          <input class="sm:col-span-2 bg-white/10 border border-white/20 rounded px-3 py-2 placeholder-white/60" placeholder="Subject">
+          <textarea class="sm:col-span-2 min-h-[120px] bg-white/10 border border-white/20 rounded px-3 py-2 placeholder-white/60" placeholder="How can we help?"></textarea>
+          <button class="sm:col-span-2 bg-lime-500 hover:bg-lime-400 text-black font-semibold px-4 py-2 rounded">Send</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- ATTRACTIONS -->
-  <section id="attractions">
-    <div class="container">
-      <h3 class="section-title">Attractions</h3>
-      <div class="grid cols-3">
-        <article class="card">
-          <div class="badge">Jurassic Laser Tag</div>
-          <p>Live-action “capture the flag” in our Jurassic-themed glow arena.</p>
-          <ul class="list">
-            <li>Two-level glow arena</li>
-            <li>Up to ~30 players per game</li>
-            <li>Ages 6+ (min. 46" height)</li>
-            <li>Clean, dry indoor runners required</li>
-          </ul>
-        </article>
-        <article class="card">
-          <div class="badge">Jurassic Arcade</div>
-          <p>Fan-favorite cabinets like Jurassic Park Arcade™ and retro hits.</p>
-          <ul class="list">
-            <li>Big-screen dino shooter</li>
-            <li>Family-friendly gameplay</li>
-            <li>Tokens & tap cards available</li>
-          </ul>
-        </article>
-        <article class="card">
-          <div class="badge">Glow Party Rooms</div>
-          <p>Private themed rooms for birthdays and events.</p>
-          <ul class="list">
-            <li>Private party space</li>
-            <li>Fridge & pizza warmers</li>
-            <li>Decor-friendly</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+  <hr class="border-white/10" />
 
-  <!-- FACILITY SHOWCASE -->
-  <section id="facility">
-    <div class="container">
-      <h3 class="section-title">Facility Showcase</h3>
-      <div class="carousel">
-        <button class="carousel-btn prev">⟨</button>
-        <div class="carousel-track">
-          <img src="facility1.jpg" alt="Arena view 1"/>
-          <img src="facility2.jpg" alt="Arena view 2"/>
-          <img src="facility3.jpg" alt="Arena view 3"/>
-        </div>
-        <button class="carousel-btn next">⟩</button>
+  <!-- FOOTER -->
+  <footer class="mx-auto max-w-7xl px-4 py-10 text-sm text-white/70">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-md bg-gradient-to-br from-lime-400 to-emerald-500 grid place-items-center font-black text-black">PJ</div>
+        <span>© <span id="year"></span> Prairie Jurassic</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ARCADE SHOWCASE -->
-  <section id="arcade">
-    <div class="container">
-      <h3 class="section-title">Arcade Games</h3>
-      <div class="carousel">
-        <button class="carousel-btn prev">⟨</button>
-        <div class="carousel-track">
-          <img src="arcade1.jpg" alt="Arcade game 1"/>
-          <img src="arcade2.jpg" alt="Arcade game 2"/>
-          <img src="arcade3.jpg" alt="Arcade game 3"/>
-        </div>
-        <button class="carousel-btn next">⟩</button>
+      <div class="flex flex-wrap gap-3">
+        <a href="#attractions" class="px-2 hover:text-white">Attractions</a>
+        <a href="#parties" class="px-2 hover:text-white">Parties</a>
+        <a href="#specials" class="px-2 hover:text-white">Specials</a>
+        <a href="#gallery" class="px-2 hover:text-white">Gallery</a>
+        <a href="#faq" class="px-2 hover:text-white">FAQ</a>
+        <a href="#contact" class="px-2 hover:text-white">Contact</a>
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <h3 class="section-title">FAQ & Policies</h3>
-      <div class="faq-grid">
-        <details class="faq-card">
-          <summary>How do I book?</summary>
-          <p>Email us with your full name, phone number, and request. We’ll confirm availability.</p>
-        </details>
-        <details class="faq-card">
-          <summary>Do I pay a deposit?</summary>
-          <p>Birthdays: 50% e-transfer deposit. Groups: pay in full at booking.</p>
-        </details>
-        <details class="faq-card">
-          <summary>What should we bring?</summary>
-          <p>Clean, dry indoor runners. Water bottles. Cake and pizza for party rooms.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT + FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer">
-      <p>© <span id="y"></span> Prairie Jurassic. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Floating CTA -->
+  <div class="fixed bottom-4 right-4 flex gap-3">
+    <a class="bg-lime-500 hover:bg-lime-400 text-black fs-xl font-bold px-4 py-2 rounded inline-flex items-center gap-2" data-booking><span>📅</span> Book Now</a>
+  </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="fixed inset-0 hidden bg-black/70 backdrop-blur flex items-center justify-center z-50">
+        <div class="bg-white/5 border border-white/20 rounded-2xl p-6 max-w-2xl w-full relative">
+            <button id="closeBooking" class="absolute top-3 right-3 text-white/70 hover:text-white text-2xl">&times;</button>
+            <h2 class="text-2xl font-black mb-4">Booking Request</h2>
+            <form id="bookingForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white">
+            <input type="text" placeholder="Name" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <input type="email" placeholder="Email" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <input type="tel" placeholder="Phone" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <input type="number" placeholder="# of Players" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <input type="date" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <input type="time" required class="bg-white/10 border border-white/20 rounded px-3 py-2">
+            <div class="sm:col-span-2 flex items-center gap-4 bg-white/10 border border-white/20 rounded px-3 py-2">
+                <label for="partyRoom" class="flex-1">Would you like the party room?</label>
+                <select id="partyRoom" name="partyRoom" class="bg-black/30 border border-white/20 rounded px-2 py-1 text-white">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                </select>
+            </div>
+            <input type="text" placeholder="Guests Age Range (e.g., 6–10 years)" class="sm:col-span-2 bg-white/10 border border-white/20 rounded px-3 py-2">
+            <textarea placeholder="Additional Notes" class="sm:col-span-2 bg-white/10 border border-white/20 rounded px-3 py-2"></textarea>
+            <button type="submit" class="sm:col-span-2 bg-lime-500 hover:bg-lime-400 text-black font-bold px-4 py-2 rounded">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
